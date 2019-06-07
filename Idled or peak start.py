@@ -62,11 +62,8 @@ def print_peaks(input_path):
 
 print_peaks("Excel data/SampleValues.xlsx")
 print_peaks("Excel data/sampleValues - Higher.xlsx")
-
 print_peaks("Excel data/sampleValues - Changed.xlsx")
 print_peaks("Excel data/sampleValues - Changed Higher.xlsx")
-
 print_peaks("Excel data/sampleValues - New.xlsx")
 print_peaks("Excel data/sampleValues - New Higher.xlsx")
-
 print_peaks("Excel data/sampleValues - Newer.xlsx")
