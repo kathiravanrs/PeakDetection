@@ -62,10 +62,10 @@ def print_peaks(input_path):
                       peak_detection(oil_pressure26, lag)))
 
 
-print_peaks("Excel data/SampleValues.xlsx")                     # First given data
-print_peaks("Excel data/sampleValues - Higher.xlsx")    # First given data but a constant value is added to all samples
-print_peaks("Excel data/sampleValues - Changed.xlsx")           # First given data but shuffled
-print_peaks("Excel data/sampleValues - Changed Higher.xlsx")    # First given data, shuffled and constant added
-print_peaks("Excel data/sampleValues - New.xlsx")               # New data from the debug message file
-print_peaks("Excel data/sampleValues - New Higher.xlsx")        # Constant value is added to the newer data
-print_peaks("Excel data/sampleValues - Newer.xlsx")             # New Data is shuffled
+print_peaks("Excel data/SampleValues.xlsx")                   # First given data
+print_peaks("Excel data/sampleValues - Higher.xlsx")          # First given data but a constant value is added to all samples
+print_peaks("Excel data/sampleValues - Changed.xlsx")         # First given data but shuffled
+print_peaks("Excel data/sampleValues - Changed Higher.xlsx")  # First given data, shuffled and constant added
+print_peaks("Excel data/sampleValues - New.xlsx")             # New data from the debug message file
+print_peaks("Excel data/sampleValues - New Higher.xlsx")      # Constant value is added to the newer data
+print_peaks("Excel data/sampleValues - Newer.xlsx")           # New Data is shuffled
