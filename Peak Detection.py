@@ -4,12 +4,12 @@ import numpy as np
 
 def peak_detection(data, lag):
     # Lag is the number of items we consider for finding the mean and std deviation
-    mean = np.mean(data[:lag])
-    std = np.std(data[:lag])
-    peak = 0
-    if std*10 > mean:
-        for val in data:
-            if (val-mean) > 0:
+    mean = np.mean(data[:lag])  # Mean of first 'lag' number of samples
+    std = np.std(data[:lag])    # Standard deviation of first 'lag' number of samples
+    peak = 0                # Initial peak count = 0
+    if std*10 > mean:       # Condition to consider a values as peak
+        for val in data:    # If the mean is much larger than the std, then values greater than mean are peaks
+            if val > mean:
                 peak += 1
     return peak
 
@@ -20,9 +20,9 @@ def print_peaks(input_path):
 
     # Splitting the data into smaller segments of 200 items in length
     oil_pressure = excel_data['Hydraulic Oil Pressure'].tolist()
-    oil_pressure2 = oil_pressure[0:200]
-    oil_pressure4 = oil_pressure[200:400]
-    oil_pressure6 = oil_pressure[400:600]
+    oil_pressure2 = oil_pressure[0:200]     # Segment containing first 200 samples
+    oil_pressure4 = oil_pressure[200:400]   # Samples containing next 200 samples from 200 to 400
+    oil_pressure6 = oil_pressure[400:600]   # 400 to 600 samples
     oil_pressure8 = oil_pressure[600:800]
     oil_pressure10 = oil_pressure[800:1000]
     oil_pressure12 = oil_pressure[1000:1200]
@@ -46,11 +46,11 @@ def print_peaks(input_path):
               "[18:20] = {:<3}\t[20:22] = {:<3}\t"
               "[22:24] = {:<3}\t[24:26] = {}"
               .format(lag,
-                      peak_detection(oil_pressure, lag),
-                      peak_detection(oil_pressure2, lag),
-                      peak_detection(oil_pressure4, lag),
-                      peak_detection(oil_pressure6, lag),
-                      peak_detection(oil_pressure8, lag),
+                      peak_detection(oil_pressure, lag),    # Number of peaks in first segment 0 - 200
+                      peak_detection(oil_pressure2, lag),   # Number of peaks in second segment 200 - 400
+                      peak_detection(oil_pressure4, lag),   # Number of peaks in third segment 400 - 600
+                      peak_detection(oil_pressure6, lag),   # 600 - 800
+                      peak_detection(oil_pressure8, lag),   # 800 - 1000
                       peak_detection(oil_pressure10, lag),
                       peak_detection(oil_pressure12, lag),
                       peak_detection(oil_pressure14, lag),
